@@ -58,7 +58,7 @@ function handleFileUpload(e) {
       <ul>
         {matches.map((match, index) => (
           <li key={index}>
-            {match.date}: {match.home_team} {match.home_score} - {match.away_score} {match.away_team}
+            {match.Date}: Team {match.ATeamID} Team {match.BTeamID} - {match.Score}
           </li>
         ))}
       </ul>
