@@ -3,9 +3,12 @@ import { useState } from "react";
 export default function MatchUploader() {
 
 const [ matches, setMatches ] = useState([])
+const [ players, setPlayers ] = useState([])
+const [ records, setRecords] = useState([])
+const [ teams, setTeams ] = useState([])
 const [ error , setError ] = useState('')
 
-{/* "ID, TeamNumber, Position, FullName, TeamID
+{/* Example string : "ID, TeamNumber, Position, FullName, TeamID
 1, 1, GK, Manuel Neuer, 1
 2, 2, DF, Antonio Rüdiger, 1
 3, 3, DF, David Raum, 1
@@ -30,39 +33,68 @@ function parseCsv(text) {
             return obj;
         });
 
-        setMatches(result);
-
     } catch (err) {
         setError("Error parsing file")
     }
 }
 
 function handleFileUpload(e) {
-    const file = e.target.files[0];
-    if (!file) return;
+  const file = e.target.files[0];
+  const fileType = e.target.getAttribute("data-type");
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      parseCsv(event.target.result);
-    };
-    reader.readAsText(file);
-  }
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    const parsed = parseCsv(event.target.result);
+    switch (fileType) {
+      case "players":
+        setPlayers(parsed);
+        break;
+      case "teams":
+        setTeams(parsed);
+        break;
+      case "matches":
+        setMatches(parsed);
+        break;
+      case "records":
+        setRecords(parsed);
+        break;
+      default:
+        setError("Unknown file type");
+    }
+  };
+  reader.readAsText(file);
+}
+
 
 
   return (
-    <div>
-      <h2>Upload Euro 2024 Match File</h2>
-      <input type="file" accept=".csv" onChange={handleFileUpload} />
-      {error && <p style={{ color: "red" }}>{error}</p>}
+    <>
+      <div>
+        <h2>Upload Euro 2024 Match File</h2>
+        <input type="file" accept=".csv" data-type="matches" onChange={handleFileUpload} />
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
 
-      <ul>
-        {matches.map((match, index) => (
-          <li key={index}>
-            {match.Date}: Team {match.ATeamID} Team {match.BTeamID} - {match.Score}
-          </li>
-        ))}
-      </ul>
-    </div>
+      <div>
+        <h2>Upload Euro 2024 Players File</h2>
+        <input type="file" accept=".csv" data-type="players" onChange={handleFileUpload} />
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
+
+       <div>
+        <h2>Upload Euro 2024 Records File</h2>
+        <input type="file" accept=".csv" data-type="records" onChange={handleFileUpload} />
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
+
+       <div>
+        <h2>Upload Euro 2024 Teams File</h2>
+        <input type="file" accept=".csv" data-type="teams" onChange={handleFileUpload} />
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
+    </>
   );
 
 
