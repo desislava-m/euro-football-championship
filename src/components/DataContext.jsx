@@ -9,15 +9,13 @@ export default function DataProvider({ children }) {
     const [ players, setPlayers ] = useState([])
     const [ records, setRecords] = useState([])
     const [ teams, setTeams ] = useState([])
-    const [ error , setError ] = useState('')
 
     return (
         <DataContext.Provider value = {{
             matches, setMatches,
             players, setPlayers,
             teams, setTeams,
-            records, setRecords,
-            error, setError
+            records, setRecords
             }}>
             {children}
         </DataContext.Provider>

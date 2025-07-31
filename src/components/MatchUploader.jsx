@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { DataContext } from "./DataContext";
 
 export default function MatchUploader() {
 
-const [ matches, setMatches ] = useState([])
-const [ players, setPlayers ] = useState([])
-const [ records, setRecords] = useState([])
-const [ teams, setTeams ] = useState([])
+const { setMatches } = useContext(DataContext)
+const { setPlayers } = useContext(DataContext)
+const { setRecords } = useContext(DataContext)
+const { setTeams } = useContext(DataContext)
 const [ error , setError ] = useState('')
 
 {/* Example string : "ID, TeamNumber, Position, FullName, TeamID
@@ -33,6 +35,8 @@ function parseCsv(text) {
             return obj;
         });
 
+        return result;
+
     } catch (err) {
         setError("Error parsing file")
     }
@@ -47,6 +51,7 @@ function handleFileUpload(e) {
   const reader = new FileReader();
   reader.onload = (event) => {
     const parsed = parseCsv(event.target.result);
+    
     switch (fileType) {
       case "players":
         setPlayers(parsed);
