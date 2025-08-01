@@ -10,13 +10,6 @@ const { setRecords } = useContext(DataContext)
 const { setTeams } = useContext(DataContext)
 const [ error , setError ] = useState('')
 
-{/* Example string : "ID, TeamNumber, Position, FullName, TeamID
-1, 1, GK, Manuel Neuer, 1
-2, 2, DF, Antonio Rüdiger, 1
-3, 3, DF, David Raum, 1
-4, 4, DF, Jonathan Tah, 1
-5, 5, MF, Pascal Groß, 1
-6, 6, DF, Joshua Kimmich, 1" */}
 
 
 function parseCsv(text) {
@@ -31,7 +24,7 @@ function parseCsv(text) {
             headers.forEach((header, index) => {
                 obj[header.trim()] = elementsInRow[index].trim();
             });
-
+            
             return obj;
         });
 
@@ -51,7 +44,7 @@ function handleFileUpload(e) {
   const reader = new FileReader();
   reader.onload = (event) => {
     const parsed = parseCsv(event.target.result);
-    
+
     switch (fileType) {
       case "players":
         setPlayers(parsed);
