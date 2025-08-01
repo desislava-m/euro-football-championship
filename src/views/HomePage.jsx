@@ -1,6 +1,7 @@
 import MatchUploader from "../components/MatchUploader"
 import { DataContext } from "../components/DataContext"
 import { useContext } from "react"
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
 
@@ -24,7 +25,22 @@ export default function HomePage() {
                 </p>
             ) : (
                 <div>
-                    <h2>All Matches</h2>
+                        <h2>All Matches</h2>
+
+                       <ul>
+                            {matches.map((match) => {
+                            const teamA = teams.find((t) => t.ID === match.ATeamID);
+                            const teamB = teams.find((t) => t.ID === match.BTeamID);
+
+                            return (
+                                <li key={match.ID}>
+                                <Link to={`/match/${match.ID}`}>
+                                    📅 {match.Date} — {teamA?.Name || "Team A"} vs {teamB?.Name || "Team B"} → {match.Score}
+                                </Link>
+                                </li>
+                            );
+                            })}
+                        </ul>
                 </div>
             )}
         </div>

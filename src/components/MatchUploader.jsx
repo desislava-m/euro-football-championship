@@ -4,9 +4,9 @@ import { DataContext } from "./DataContext";
 
 export default function MatchUploader() {
 
-const { setMatches } = useContext(DataContext)
-const { setPlayers } = useContext(DataContext)
-const { setRecords } = useContext(DataContext)
+const { matches, setMatches } = useContext(DataContext)
+const { players, setPlayers } = useContext(DataContext)
+const { records, setRecords } = useContext(DataContext)
 const { setTeams } = useContext(DataContext)
 const [ error , setError ] = useState('')
 
@@ -61,6 +61,7 @@ function handleFileUpload(e) {
       default:
         setError("Unknown file type");
     }
+
   };
   reader.readAsText(file);
 }
