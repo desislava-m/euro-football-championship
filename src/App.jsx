@@ -1,6 +1,7 @@
 import DataProvider from "./components/DataContext"
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import HomePage from "./views/HomePage"
+import HomePage from "./views/HomePage";
+import MatchDetails from "./components/MatchDetails";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
 
           <Routes>
             <Route path='/' element={<HomePage />} />
+            <Route path="/match/:id" element={<MatchDetails />} />
           </Routes>
 
         </div>

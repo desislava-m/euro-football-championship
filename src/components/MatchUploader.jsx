@@ -4,10 +4,7 @@ import { DataContext } from "./DataContext";
 
 export default function MatchUploader() {
 
-const { matches, setMatches } = useContext(DataContext)
-const { players, setPlayers } = useContext(DataContext)
-const { records, setRecords } = useContext(DataContext)
-const { setTeams } = useContext(DataContext)
+const { matches, setMatches, players, setPlayers, records, setRecords, teams, setTeams } = useContext(DataContext);
 const [ error , setError ] = useState('')
 
 
