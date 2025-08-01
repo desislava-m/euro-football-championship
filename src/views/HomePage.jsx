@@ -1,7 +1,7 @@
 import MatchUploader from "../components/MatchUploader"
 import { DataContext } from "../components/DataContext"
 import { useContext } from "react"
-import { Link } from "react-router-dom";
+import AllMatches from "../components/AllMatches";
 
 export default function HomePage() {
 
@@ -19,29 +19,10 @@ export default function HomePage() {
 
             <MatchUploader />
 
-            {!allDataLoaded ? (
-                <p style={{ marginTop: "2rem" }}>
-                    Please upload all four CSV files to see the tournament data.
-                </p>
+            {allDataLoaded ? (
+                <AllMatches />
             ) : (
-                <div>
-                        <h2>All Matches</h2>
-
-                       <ul>
-                            {matches.map((match) => {
-                            const teamA = teams.find((t) => t.ID === match.ATeamID);
-                            const teamB = teams.find((t) => t.ID === match.BTeamID);
-
-                            return (
-                                <li key={match.ID}>
-                                <Link to={`/match/${match.ID}`}>
-                                    📅 {match.Date} — {teamA?.Name || "Team A"} vs {teamB?.Name || "Team B"} → {match.Score}
-                                </Link>
-                                </li>
-                            );
-                            })}
-                        </ul>
-                </div>
+                <p>Please upload all four CSV files to see the tournament data.</p>
             )}
         </div>
     )
