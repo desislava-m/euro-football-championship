@@ -1,7 +1,7 @@
-import DataProvider from "./components/DataContext"
+import DataProvider from "./context/DataContext"
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import HomePage from "./views/HomePage";
-import MatchDetails from "./components/MatchDetails";
+import MatchDetails from "./views/MatchDetails";
 
 function App() {
 
@@ -12,9 +12,6 @@ function App() {
           <div className='app-container'>
           <nav className='nav'>
             <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink>
-            <NavLink to="/counter" className={({ isActive }) => isActive ? "active-link" : ""}>
-            Match Details</NavLink>
-            <NavLink to="/clock" className={({ isActive }) => isActive ? "active-link" : ""}>Team Page</NavLink>
           </nav>
 
           <Routes>

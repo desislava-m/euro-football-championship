@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useContext } from "react";
-import { DataContext } from "./DataContext";
+import { DataContext } from "../context/DataContext";
 
 export default function MatchUploader() {
 
@@ -45,15 +45,19 @@ function handleFileUpload(e) {
     switch (fileType) {
       case "players":
         setPlayers(parsed);
+        localStorage.setItem("players", JSON.stringify(parsed));
         break;
       case "teams":
         setTeams(parsed);
+        localStorage.setItem("teams", JSON.stringify(parsed));
         break;
       case "matches":
         setMatches(parsed);
+        localStorage.setItem("matches", JSON.stringify(parsed));
         break;
       case "records":
         setRecords(parsed);
+        localStorage.setItem("records", JSON.stringify(parsed));
         break;
       default:
         setError("Unknown file type");
@@ -90,6 +94,14 @@ function handleFileUpload(e) {
         <input type="file" accept=".csv" data-type="teams" onChange={handleFileUpload} />
         {error && <p style={{ color: "red" }}>{error}</p>}
       </div>
+
+      <button onClick={() =>{
+        localStorage.clear();
+        setMatches([]);
+        setPlayers([]);
+        setTeams([]);
+        setRecords([]);
+      }}>Clear All Data</button>
     </>
   );
 

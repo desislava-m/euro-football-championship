@@ -1,5 +1,5 @@
 import MatchUploader from "../components/MatchUploader"
-import { DataContext } from "../components/DataContext"
+import { DataContext } from "../context/DataContext"
 import { useContext } from "react"
 import AllMatches from "../components/AllMatches";
 

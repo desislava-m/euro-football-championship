@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
-import { DataContext } from "./DataContext";
+import { DataContext } from "../context/DataContext";
 
 export default function MatchDetails() {
 
