@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { DataContext } from "../context/DataContext"
 import { useParams } from "react-router-dom";
+import TeamPlayers from "../components/TeamPlayers";
 
 export default function TeamDetails() {
 
@@ -11,15 +12,7 @@ export default function TeamDetails() {
 
     return (
         <>
-           <ul>
-               {teamPlayers.map((player) => {
-
-                    return (
-                        <li key={player.ID}>
-                            {player.TeamNumber} — {player.FullName}  {player.Position}
-                        </li>);
-                    })}
-            </ul>
+           <TeamPlayers team={teamPlayers}/>
         </>
     )
 }
