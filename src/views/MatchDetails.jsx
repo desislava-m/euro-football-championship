@@ -70,8 +70,8 @@ const FWteamB = teamBPlayers.filter((player) => player.Position === "FW");
       <p>{teamA?.Name} vs {teamB?.Name}</p>
       <p>Score: {match.Score}</p>
       <div className="formations-container">
-      <Formation teamName ={teamA.Name} GK = {GKteamA} DF = {DFteamA} MF = {MFteamA} FW = {FWteamA} />
-      <Formation teamName ={teamB.Name} GK = {GKteamB} DF = {DFteamB} MF = {MFteamB} FW = {FWteamB} />
+      <Formation teamID ={teamA.ID} teamName ={teamA.Name} GK = {GKteamA} DF = {DFteamA} MF = {MFteamA} FW = {FWteamA} />
+      <Formation teamID ={teamB.ID} teamName ={teamB.Name} GK = {GKteamB} DF = {DFteamB} MF = {MFteamB} FW = {FWteamB} />
       </div>
     </>
   );

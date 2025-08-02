@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import HomePage from "./views/HomePage";
 import MatchDetails from "./views/MatchDetails";
 import './App.css';
+import TeamDetails from "./views/TeamDetails";
 
 function App() {
 
@@ -17,7 +18,8 @@ function App() {
 
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path="/match/:id" element={<MatchDetails />} />
+            <Route path='/match/:id' element={<MatchDetails />} />
+            <Route path='/team/:id' element={<TeamDetails />} />
           </Routes>
 
         </div>

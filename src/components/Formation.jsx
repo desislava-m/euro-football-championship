@@ -1,10 +1,11 @@
-export default function Formation({ teamName, GK, DF, MF, FW }) {
+import { Link } from "react-router-dom"
+export default function Formation({ teamID, teamName, GK, DF, MF, FW }) {
 
 
 
     return(
         <div className="formation">
-            <h3>{teamName}</h3>
+            <h3><Link to={`/team/${teamID}`}>{teamName}</Link></h3>
 
             <div className="row">{FW.map(p => <div key={p.ID}>{p.FullName}</div>)}</div>
             <div className="row">{MF.map(p => <div key={p.ID}>{p.FullName}</div>)}</div>
