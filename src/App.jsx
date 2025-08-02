@@ -2,6 +2,7 @@ import DataProvider from "./context/DataContext"
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import HomePage from "./views/HomePage";
 import MatchDetails from "./views/MatchDetails";
+import './App.css';
 
 function App() {
 
