@@ -4,9 +4,9 @@ import HomePage from "./views/HomePage";
 import MatchDetails from "./views/MatchDetails";
 import './App.css';
 import TeamDetails from "./views/TeamDetails";
+import BracketComponent from "./components/Brackets";
 
 function App() {
-
 
   return (
     <DataProvider>
@@ -23,6 +23,7 @@ function App() {
           </Routes>
 
         </div>
+        <BracketComponent />
       </BrowserRouter>
     </DataProvider>
   )
