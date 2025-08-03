@@ -1,18 +1,20 @@
 export default function TeamPlayers({ team }) {
-
-
     return (
         <div className="players-roster">
-            <ul>
-                <li>No — Player Position</li>
-               {team.map((player) => {
-
-                    return (
-                        <li key={player.ID}>
-                            {player.TeamNumber} — {player.FullName}  {player.Position}
-                        </li>);
-                    })}
+            <ul className="players-table">
+                <li className="players-header">
+                    <span>No</span>
+                    <span>Player</span>
+                    <span>Position</span>
+                </li>
+                {team.map((player) => (
+                    <li key={player.ID} className="players-row">
+                        <span>{player.TeamNumber}</span>
+                        <span>{player.FullName}</span>
+                        <span>{player.Position}</span>
+                    </li>
+                ))}
             </ul>
         </div>
-    )
+    );
 }

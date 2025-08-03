@@ -53,11 +53,9 @@
   gap: 80px;
 }
 
-.team-roster {
-  background-color: #f5f5f5;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.team-roster h2 {
+ font-size: 20px;
+ margin-top: 80px;
 }
 
 .players-roster ul {
@@ -157,4 +155,50 @@ button:hover {
 
 .all-matches-container {
   margin-bottom: 150px;
+}
+
+.players-roster {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 10px;
+  color: #f1f1f1;
+  width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.players-table {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.players-header, .players-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid #333;
+}
+
+.players-header {
+  font-weight: bold;
+  background-color: #2b2b2b;
+  color: #fff;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.players-row:nth-child(even) {
+  background-color: #222;
+}
+
+.players-row span {
+  flex: 1;
+  text-align: left;
+}
+
+.players-header span {
+  flex: 1;
+  text-align: left;
 }
