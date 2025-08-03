@@ -32,43 +32,6 @@ function findNumberOfGroups(teams) {
 
 export default function BracketComponent() {
 
-    // const rounds = [
-    //   {
-    //     title: 'Round one',
-    //     seeds: [
-    //       {
-    //         id: 1,
-    //         date: new Date().toDateString(),
-    //         teams: [{ name: 'Team A' }, { name: 'Team B' }],
-    //       },
-    //       {
-    //         id: 2,
-    //         date: new Date().toDateString(),
-    //         teams: [{ name: 'Team C' }, { name: 'Team D' }],
-    //       },
-    //       {
-    //         id: 3,
-    //         date: new Date().toDateString(),
-    //         teams: [{ name: 'Team C' }, { name: 'Team D' }],
-    //       },
-    //         {
-    //         id: 4,
-    //         date: new Date().toDateString(),
-    //         teams: [{ name: 'Team C' }, { name: 'Team D' }],
-    //       },
-    //     ],
-    //   },
-    //   {
-    //     title: 'Round two',
-    //     seeds: [
-    //       {
-    //         id: 3,
-    //         date: new Date().toDateString(),
-    //         teams: [{ name: 'Team A' }, { name: 'Team C' }],
-    //       },
-    //     ],
-    //   },
-    // ];
 
     const { matches, teams } = useContext(DataContext);
 
@@ -114,7 +77,7 @@ export default function BracketComponent() {
 
     const roundSixteenIndex = groupMatches + 8;
     const sixteenObj = {
-        title: 'Round of 16',
+        title: 'Round Of 16',
         seeds: []
     };
 
@@ -141,7 +104,7 @@ export default function BracketComponent() {
 
     const quarterFinalIndex = roundSixteenIndex + 4
     const quarterObj = {
-        title: 'Quarter-final',
+        title: 'Quarter-Final',
         seeds: []
     };
 
@@ -166,7 +129,7 @@ export default function BracketComponent() {
 
     const semiFinalIndex = quarterFinalIndex + 2
     const semiFObj = {
-        title: 'Semi-final',
+        title: 'Semi-Final',
         seeds: []
     };
 

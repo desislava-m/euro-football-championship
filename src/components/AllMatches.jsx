@@ -8,24 +8,26 @@ export default function AllMatches() {
     const { matches, teams } = useContext(DataContext);
 
     return (
-                <div>
-                    <h2>All Matches</h2>
+        <div>
+            <h2>All Matches</h2>
 
-                    <ul>
-                        {matches.map((match) => {
-                        const teamAobj = teams.find((t) => t.ID === match.ATeamID);
-                        const teamBobj = teams.find((t) => t.ID === match.BTeamID);
+            <ul className="match-list">
+                {matches.map((match) => {
+                    const teamAobj = teams.find((t) => t.ID === match.ATeamID);
+                    const teamBobj = teams.find((t) => t.ID === match.BTeamID);
 
-
-                        return (
-                            <li key={match.ID}>
-                            <Link to={`/match/${match.ID}`}>
-                                📅 {match.Date} — {teamAobj?.Name || "Team A"} vs {teamBobj?.Name || "Team B"}→ {match.Score}
+                    return (
+                        <li key={match.ID} className="match-item">
+                            <Link to={`/match/${match.ID}`} className="match-link">
+                                <span className="match-date">📅 {match.Date}</span>
+                                <span className="match-details">
+                                    {teamAobj?.Name || "Team A"} vs {teamBobj?.Name || "Team B"} → {match.Score}
+                                </span>
                             </Link>
-                            </li>
-                        );
-                        })}
-                     </ul>
-                </div>
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
     )
 }
