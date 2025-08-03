@@ -112,13 +112,13 @@ export default function BracketComponent() {
 
     //ROUND OF 16
 
-    const roundSixteenIndex = numberOfGroups + 8;
+    const roundSixteenIndex = groupMatches + 8;
     const sixteenObj = {
         title: 'Round of 16',
         seeds: []
     };
 
-    for (let i = numberOfGroups; i < roundSixteenIndex; i++) {
+    for (let i = groupMatches; i < roundSixteenIndex; i++) {
 
         let match = matches[i]
         const AteamID = match.ATeamID
@@ -188,6 +188,32 @@ export default function BracketComponent() {
     rounds.push(semiFObj)
 
 
+    //FINAL
+
+     const finalIndex = semiFinalIndex + 1
+    const finalObj = {
+        title: 'Final',
+        seeds: []
+    };
+
+    for (let i = semiFinalIndex; i < finalIndex; i++) {
+        let match = matches[i]
+        const AteamID = match.ATeamID
+        const BteamID = match.BTeamID
+        const AteamName = getTeamNameByID(teams, AteamID);
+        const BteamName = getTeamNameByID(teams, BteamID);
+
+        const seed = {
+            id: i,
+            date: match.Date,
+            teams: [{ name: AteamName }, { name: BteamName }]
+        };
+
+        finalObj.seeds.push(seed)
+    }
+    rounds.push(finalObj)
+
+console.log(matches)
 
     return (
         <Bracket rounds={rounds} />
