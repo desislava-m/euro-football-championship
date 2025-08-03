@@ -2,6 +2,7 @@ import MatchUploader from "../components/MatchUploader"
 import { DataContext } from "../context/DataContext"
 import { useContext } from "react"
 import AllMatches from "../components/AllMatches";
+import BracketComponent from "../components/Brackets";
 
 export default function HomePage() {
 
@@ -14,16 +15,19 @@ export default function HomePage() {
         records.length > 0;
 
     return (
-        <div className="homepage-container">
+        <div className="homepage-contai">
             <h1>Euro 2024 Tournament Viewer</h1>
 
             <MatchUploader />
 
-            {allDataLoaded ? (
+            {allDataLoaded ? (<>
                 <AllMatches />
+                <BracketComponent />
+                </>
             ) : (
                 <p>Please upload all four CSV files to see the tournament data.</p>
             )}
+            
         </div>
     )
 }

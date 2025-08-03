@@ -18,12 +18,12 @@ function App() {
 
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/match/:id' element={<MatchDetails />} />
+            <Route path='/match/:id' element={<MatchDetails />}  />
             <Route path='/team/:id' element={<TeamDetails />} />
           </Routes>
 
         </div>
-        <BracketComponent />
+        
       </BrowserRouter>
     </DataProvider>
   )
