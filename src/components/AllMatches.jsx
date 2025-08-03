@@ -8,7 +8,7 @@ export default function AllMatches() {
     const { matches, teams } = useContext(DataContext);
 
     return (
-        <div>
+        <div className="all-matches-container">
             <h2>All Matches</h2>
 
             <ul className="match-list">

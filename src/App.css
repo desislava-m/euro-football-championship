@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.nav {
+  color: #a575ff;
+  font-size: 20px;
+}
 
 .formation {
   flex: 1;
@@ -132,9 +136,10 @@ input[type="file"] {
 }
 
 button {
-  margin-top: 100px;
+  margin-top: 80px;
+  margin-bottom: 80px;
   padding: 10px 16px;
-  background-color: #bb68ff;
+  background-color: #a968ff;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -148,4 +153,8 @@ button:hover {
 
 .homepage-container {
   padding: 20px 32px;
+}
+
+.all-matches-container {
+  margin-bottom: 150px;
 }

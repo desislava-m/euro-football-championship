@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
           <div className='app-container'>
           <nav className='nav'>
-            <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink>
+            <NavLink to="/" className='nav'>Home</NavLink>
           </nav>
 
           <Routes>
