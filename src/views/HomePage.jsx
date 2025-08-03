@@ -14,7 +14,7 @@ export default function HomePage() {
         records.length > 0;
 
     return (
-        <div>
+        <div className="homepage-container">
             <h1>Euro 2024 Tournament Viewer</h1>
 
             <MatchUploader />

@@ -19,7 +19,7 @@ export default function AllMatches() {
                     return (
                         <li key={match.ID} className="match-item">
                             <Link to={`/match/${match.ID}`} className="match-link">
-                                <span className="match-date">📅 {match.Date}</span>
+                                <span className="match-date"> {match.Date}</span>
                                 <span className="match-details">
                                     {teamAobj?.Name || "Team A"} vs {teamBobj?.Name || "Team B"} → {match.Score}
                                 </span>

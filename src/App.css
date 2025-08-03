@@ -48,6 +48,8 @@
   list-style-type: none;
 }
 
+
+
 .match-list {
   list-style: none;
   padding: 0;
@@ -58,7 +60,7 @@
   background-color: #f7f7f7;
   border: 1px solid #ddd;
   margin-bottom: 12px;
-  padding: 12px 18px;
+  padding: 12px 1px;
   border-radius: 8px;
   transition: background-color 0.2s ease;
 }
@@ -69,14 +71,14 @@
 
 .match-link {
   text-decoration: none;
-  color: #333;
+  color: #24044e;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
 .match-link:hover {
-  color: #0077cc;
+  color: #660fd8;
 }
 
 .match-date {
@@ -87,4 +89,51 @@
 .match-details {
   font-weight: 600;
   font-size: 1rem;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #20065e 0%,#ffffff 50%, #ffffff 100%);
+  min-height: 100vh;
+  color: #f1f1f1;
+}
+
+h1, h2 {
+  color: #ffffff;
+}
+
+
+section, .light-section {
+  color: #222;
+}
+
+
+input[type="file"] {
+  margin-top: 8px;
+  padding: 6px;
+  background-color: #753ebd59;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+}
+
+button {
+  margin-top: 100px;
+  padding: 10px 16px;
+  background-color: #bb68ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4b00a0;
+}
+
+
+.homepage-container {
+  padding: 20px 32px;
 }
