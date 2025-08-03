@@ -53,9 +53,9 @@ export default function MatchDetails() {
 
     return (
         <>
-            <h2>Match Details</h2>
-            <p>{teamA?.Name} vs {teamB?.Name}</p>
-            <p>Score: {match.Score}</p>
+            <h1>Match Details</h1>
+            <h2>{teamA?.Name} vs {teamB?.Name}</h2>
+            <h2>Score: {match.Score}</h2>
             <div className="formations-container">
                 <Formation teamID={teamA.ID} teamName={teamA.Name} GK={GKteamA} DF={DFteamA} MF={MFteamA} FW={FWteamA} />
                 <Formation teamID={teamB.ID} teamName={teamB.Name} GK={GKteamB} DF={DFteamB} MF={MFteamB} FW={FWteamB} />
